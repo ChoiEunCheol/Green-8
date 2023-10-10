@@ -11,19 +11,25 @@
             padding: 0;
             margin: 0;
         }
-
-        #td {
-            width: 10px;
-            height: 10px;
-            background-color: violet;
+        table{
+            border-collapse: collapse;
         }
+        .white{
+            width: 1px;
+            height: 1px;
+            }
+        .black{
+            width: 1px;
+            height: 1px;
+            background-color: black;
+            }
     </style>
 </head>
 
 <body>
     <div id="root">
         <div id="left">
-            <table id="table" bgcolor="red"></table>
+            <table id="table" borde="0"></table>
         </div>
         <div id="right"> <button>클릭</button> </div>
     </div>
@@ -31,23 +37,29 @@
         const table = document.getElementById('table');
         const btn = document.getElementsByTagName('button');
         const tr = document.getElementsByTagName('tr');
+        const td = document.getElementsByTagName('td');
 
         const boxWidth = 100;
         const boxheigth = 100;
 
-        for (let i = 0; i < boxheigth; i++) {
+        for (let i = 0; i < boxheigth;i++) {
             const trMaker = document.createElement('tr');
             table.append(trMaker)
             for (let j = 0; j < boxWidth; j++) {
                 const tdMaker = document.createElement('td');
                 tr[i].append(tdMaker);
+                td[boxWidth*i+j].className = "white";
             }
+
         }
 
-        btn[0].addEventListener('click', function (e) {
+        btn[0].addEventListener('click', function () {
+            for( let i = 0 ; i < 10 ; i++){
             const x = Math.floor(Math.random() * boxWidth);
             const y = Math.floor(Math.random() * boxheigth);
-
+            console.dir(tr[y].children[x]);
+            tr[y].children[x].className = "black";
+        }
         })
     </script>
 </body>
