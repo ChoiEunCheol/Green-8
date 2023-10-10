@@ -14,7 +14,7 @@
     #root{
         width: 1920px;
         height: 1080px;
-        background-color: violet;
+        background-color: yellow;
     }
 </style>
 </head>
@@ -24,8 +24,12 @@
     </div>
 <script>
     const btn = document.getElementsByTagName('button');
+
     btn[0].addEventListener('click',function(){
-        alert('ㅇㅇ');
+        const x = Math.floor(Math.random()*1920)+1;
+        const y = Math.floor(Math.random()*1080)+1;
+
+        console.log(x,y);
     })
 </script>
 </body>
