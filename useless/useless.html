@@ -1,36 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<style>
-    *{
-        padding: 0;
-        margin: 0;
-    }
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
 
-    #root{
-        width: 1920px;
-        height: 1080px;
-        background-color: yellow;
-    }
-</style>
+        #td {
+            width: 10px;
+            height: 10px;
+            background-color: violet;
+        }
+    </style>
 </head>
+
 <body>
     <div id="root">
-        <button>클릭</button>
+        <div id="left">
+            <table id="table" bgcolor="red"></table>
+        </div>
+        <div id="right"> <button>클릭</button> </div>
     </div>
-<script>
-    const btn = document.getElementsByTagName('button');
+    <script>
+        const table = document.getElementById('table');
+        const btn = document.getElementsByTagName('button');
+        const tr = document.getElementsByTagName('tr');
 
-    btn[0].addEventListener('click',function(){
-        const x = Math.floor(Math.random()*1920)+1;
-        const y = Math.floor(Math.random()*1080)+1;
+        const boxWidth = 100;
+        const boxheigth = 100;
 
-        console.log(x,y);
-    })
-</script>
+        for (let i = 0; i < boxheigth; i++) {
+            const trMaker = document.createElement('tr');
+            table.append(trMaker)
+            for (let j = 0; j < boxWidth; j++) {
+                const tdMaker = document.createElement('td');
+                tr[i].append(tdMaker);
+            }
+        }
+
+        btn[0].addEventListener('click', function (e) {
+            const x = Math.floor(Math.random() * boxWidth);
+            const y = Math.floor(Math.random() * boxheigth);
+
+        })
+    </script>
 </body>
+
 </html>
