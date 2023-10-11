@@ -5,10 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<style>
+    #root{
+        display: flex;
+    }
+</style>
 </head>
 <body>
     <div id="root">
-        <canvas id="canvas" width="800" height="800"></canvas>
+        <div id="left">
+            <canvas id="canvas" width="800" height="800"></canvas>
+        </div>
+        <div id="right">
+            <input type="text" placeholder="수식 입력"></input>
+        </div>
     </div>
 <script>
     const canvas = document.getElementById('canvas');
@@ -17,9 +27,15 @@
     context.beginPath();
     context.moveTo(100,100);
     context.lineTo(200,200);
+    context.stroke();
+    context.closePath();
+
+    context.beginPath();
     context.moveTo(200,200);
     context.lineTo(300,150);
     context.stroke();
+    context.closePath();
+
 
 </script>
 </body>
