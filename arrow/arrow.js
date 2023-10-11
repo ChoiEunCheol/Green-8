@@ -3,4 +3,5 @@ function outerOne(a) {
     innerOne(a);
 }
 
+
 console.log(outerOne("hello"));
