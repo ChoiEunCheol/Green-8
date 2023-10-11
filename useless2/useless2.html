@@ -25,9 +25,9 @@
     const context = canvas.getContext('2d');
     const input = document.getElementById('input');
 
-    let equ = "y=2x+1";
-    let xintercept = -1/2;
-    let yIntercept = 1;
+    let equ = "y=10x+20";
+    let xintercept = -2; //y=0
+    let yIntercept = 780; //y=800
     
     function straightLine(a,b,c,d){
         context.beginPath();
@@ -44,6 +44,8 @@
         straightLine(10*i,398,10*i,402);
         straightLine(398,10*i,402,10*i);
     }
+
+    straightLine(-2,0,780,800);
 
 
 </script>
