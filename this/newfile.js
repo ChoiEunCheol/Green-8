@@ -3,5 +3,11 @@ function student(name, number) {
     this.number = number;
 }
 
-let test = new student("공욱재","0");
-console.log(test);
+let studentArr = [];
+let list = ["1","2"];
+
+for ( let i = 0 ; i < 2 ; i++ ){
+    studentArr[i] = new student(list[i],i+1);
+}
+
+console.log(studentArr);
