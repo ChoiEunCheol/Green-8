@@ -17,17 +17,18 @@
             <canvas id="canvas" width="800" height="800"></canvas>
         </div>
         <div id="right">
-            <input type="text" id="input" placeholder="수식 입력"></input>
+            <h1>y=ax+b</h1>
+            <input type="text" id="a" placeholder="a값"></input>
+            <input type="text" id="b" placeholder="b값"></input>
+            <button>입력</button>
         </div>
     </div>
 <script>
     const canvas = document.getElementById('canvas');
     const context = canvas.getContext('2d');
-    const input = document.getElementById('input');
-
-    let equ = "y=x+0";
-    let xx = 800; //x=0
-    let yy = 000; //x=800
+    const inputA = document.getElementById('a');
+    const inputB = document.getElementById('b');
+    const btn = document.getElementsByTagName('button');
     
     function straightLine(a,b,c,d){
         context.beginPath();
@@ -45,7 +46,13 @@
         straightLine(398,10*i,402,10*i);
     }
 
-    straightLine(0,xx,800,yy);
+    btn[0].addEventListener('click',()=>{
+        let xx = inputB.value+800; //x=0
+        let yy = -(inputB.value/inputA.value); //x=800
+
+        straightLine(0,xx,800,yy);
+        console.log(-(inputB.value/inputA.value));
+    })
 
 
 </script>
