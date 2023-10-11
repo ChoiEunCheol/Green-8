@@ -3,8 +3,11 @@ function outer() {
 }
 
 const outerTwo = function() {
-    return "bys";
+    return "bye";
 }
+
+const outerThree = () => "wow";
 
 console.log(outer());
 console.log(outerTwo());
+console.log(outerThree());
