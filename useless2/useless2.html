@@ -17,25 +17,28 @@
             <canvas id="canvas" width="800" height="800"></canvas>
         </div>
         <div id="right">
-            <input type="text" placeholder="수식 입력"></input>
+            <input type="text" id="input" placeholder="수식 입력"></input>
         </div>
     </div>
 <script>
     const canvas = document.getElementById('canvas');
     const context = canvas.getContext('2d');
+    const input = document.getElementById('input');
 
-    context.beginPath();
-    context.moveTo(100,100);
-    context.lineTo(200,200);
-    context.stroke();
-    context.closePath();
+    let equ = "y=2x+1";
+    let xintercept = -1/2;
+    let yIntercept = 1;
+    
+    function straightLine(a,b,c,d){
+        context.beginPath();
+        context.moveTo(a,b);
+        context.lineTo(c,d);
+        context.stroke();
+        context.closePath();
+    }
 
-    context.beginPath();
-    context.moveTo(200,200);
-    context.lineTo(300,150);
-    context.stroke();
-    context.closePath();
-
+    straightLine(0,400,800,400);
+    straightLine(400,0,400,800);
 
 </script>
 </body>
